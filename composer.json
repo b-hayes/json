@@ -1,0 +1,32 @@
+{
+    "name": "b-hayes/json",
+    "description": "Runs any PHP Class as a command line application",
+    "license": "",
+    "authors": [
+        {
+            "name": "b-hayes",
+            "email": "bradozman@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit -c test/phpunit.xml",
+        "test-report": "phpunit -c test/phpunit.xml test --coverage-html test/report"
+    },
+    "autoload": {
+        "psr-4": {
+            "BHayes\\Json\\": "php"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BHayes\\Json\\Test\\": "test"
+        }
+    },
+    "bin": [
+    ],
+    "require": {
+        "php": "^7.4.3",
+      "ext-json": "*",
+        "phpunit/phpunit": "^9.5"
+    }
+}
