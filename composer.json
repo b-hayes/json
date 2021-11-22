@@ -1,7 +1,7 @@
 {
     "name": "b-hayes/json",
     "description": "Runs any PHP Class as a command line application",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "b-hayes",
