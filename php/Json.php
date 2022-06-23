@@ -4,18 +4,21 @@
 namespace BHayes\Json;
 
 
+use JsonException;
+
 class Json
 {
     /**
      * Returns valid json string or throws JsonException.
      *
      * @param $mixed
+     * @param int $jsonFlags
      * @return string
-     * @throws \JsonException
+     * @throws JsonException JSON_THROW_ON_ERROR flag is always on regardless of user flags.
      */
-    public static function encode($mixed): string
+    public static function encode($mixed, int $jsonFlags = JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT): string
     {
-        return json_encode($mixed, JSON_THROW_ON_ERROR);
+        return json_encode($mixed, JSON_THROW_ON_ERROR|$jsonFlags);
     }
 
     /**
@@ -23,7 +26,7 @@ class Json
      *
      * @param string $jsonString
      * @return mixed
-     * @throws \JsonException
+     * @throws JsonException
      */
     public static function decode(string $jsonString)
     {
@@ -40,7 +43,7 @@ class Json
      *
      * @param string $jsonString
      * @param object $instance
-     * @throws \JsonException
+     * @throws JsonException
      */
     public static function loadJsonString(string $jsonString, object &$instance)
     {
