@@ -177,10 +177,10 @@ class ComposerJson extends JsonFile
     public ?bool $preferStable;
 
     /**
-     * @var null|object[]
+     * @var null|object[]|object
      * @see: https://getcomposer.org/doc/04-schema.md#repositories
      */
-    public ?array $repositories;
+    public $repositories;
 
     /**
      * Typehint only includes platform->php as a personal preference but there are a LOT more config options.
