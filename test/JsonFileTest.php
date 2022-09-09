@@ -30,7 +30,7 @@ class JsonFileTest extends TestCase
 
     public function testFileNotExist()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(\JsonException::class);
         new JsonFile('file-that-doesnt-exist.json');
     }
 }
