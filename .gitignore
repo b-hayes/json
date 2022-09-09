@@ -7,9 +7,6 @@ composer.phar
 /.idea/
 private.env.json
 
-# Temporary | Generated files.
-/temp/
-
 # PhpUnit
 test/report/*
 .phpunit.result.cache

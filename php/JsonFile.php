@@ -32,8 +32,9 @@ class JsonFile
         return Json::encode($this);
     }
 
-    public function __save()
+    public function __save(string $fileName = null)
     {
-        file_put_contents($this->__fileName, Json::encode($this));
+        $saveAs = $fileName ?: $this->__fileName;
+        file_put_contents($saveAs, Json::encode($this));
     }
 }

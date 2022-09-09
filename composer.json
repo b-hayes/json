@@ -9,12 +9,13 @@
         }
     ],
     "scripts": {
-        "test": "phpunit -c test/phpunit.xml",
+        "test": "vendor/bin/phpunit test",
         "test-report": "phpunit -c test/phpunit.xml test --coverage-html test/report"
     },
     "autoload": {
         "psr-4": {
-            "BHayes\\Json\\": "php"
+            "BHayes\\Json\\": "php",
+            "BHayes\\Test\\": "test"
         }
     },
     "autoload-dev": {

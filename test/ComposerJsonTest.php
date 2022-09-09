@@ -14,8 +14,11 @@ class ComposerJsonTest extends TestCase
         $this->composerJson = new ComposerJson(__DIR__ . '/../composer.json');
     }
 
-    public function testLoad()
+    public function testLoadAndSave()
     {
-        new ComposerJson(__DIR__ . '/ComposerJsonTest.json');
+        $composerJson = new ComposerJson(__DIR__ . '/ComposerJsonTest.json');
+        $composerJson->__save(__DIR__ . '/../temp/ComposerJsonTest.json');
+        $reloaded = new ComposerJson(__DIR__ . '/../temp/ComposerJsonTest.json');
+        self::assertEquals(get_object_vars($composerJson), get_object_vars($reloaded));
     }
 }

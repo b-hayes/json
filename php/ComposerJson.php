@@ -1,11 +1,15 @@
 <?php
 
 
-namespace BHayes\Json;
+namespace BHayes\Test;
 
 
 class ComposerJson extends JsonFile
 {
+    public function __construct(string $filename = 'composer.json')
+    {
+        parent::__construct($filename);
+    }
 
     /**
      * @var string|null
@@ -87,10 +91,12 @@ class ComposerJson extends JsonFile
     public ?object $support;
 
     /**
-     * @var null|object{ type:string, url: string }
+     * @var null|array{
+     *          object{ type:string, url: string }
+     *      }
      * @see: https://getcomposer.org/doc/04-schema.md#funding
      */
-    public ?object $funding;
+    public ?array $funding;
 
     /**
      * @var null|object
@@ -225,9 +231,4 @@ class ComposerJson extends JsonFile
      * @see: https://getcomposer.org/doc/04-schema.md#non-feature-branches
      */
     public ?array $nonFeatureBranches;
-
-    public function __construct(string $filename = 'composer.json')
-    {
-        parent::__construct($filename);
-    }
 }
