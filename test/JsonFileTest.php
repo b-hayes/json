@@ -27,4 +27,10 @@ class JsonFileTest extends TestCase
         $jsonFile = new JsonFile($this->testFile);
         self::assertTrue('some value' === $jsonFile->saveThis);
     }
+
+    public function testFileNotExist()
+    {
+        $this->expectException(\Exception::class);
+        new JsonFile('file-that-doesnt-exist.json');
+    }
 }

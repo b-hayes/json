@@ -24,7 +24,6 @@ class JsonFile
         if ($jsonString === false) throw new \Exception("$filename could not be loaded.");
 
         Json::loadJsonString($jsonString, $this);
-
         $this->__fileName = $filename;
     }
 
