@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BHayes\Test;
+namespace BHayes\Json;
 
 
 class ComposerJson extends JsonFile

@@ -1,6 +1,6 @@
-<?php
+<?php /** @noinspection ALL */
 
-namespace BHayes\Json\test;
+namespace BHayes\Test;
 
 use BHayes\Json\Json;
 use BHayes\Json\JsonFile;

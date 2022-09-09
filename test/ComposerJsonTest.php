@@ -1,19 +1,12 @@
 <?php
 
-namespace BHayes\Json\Test;
+namespace BHayes\Test;
 
 use BHayes\Json\ComposerJson;
 use PHPUnit\Framework\TestCase;
 
 class ComposerJsonTest extends TestCase
 {
-    private ComposerJson $composerJson;
-
-    public function setUp(): void
-    {
-        $this->composerJson = new ComposerJson(__DIR__ . '/../composer.json');
-    }
-
     public function testLoadAndSave()
     {
         $composerJson = new ComposerJson(__DIR__ . '/ComposerJsonTest.json');

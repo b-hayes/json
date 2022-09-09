@@ -1,6 +1,6 @@
 <?php
 
-namespace BHayes\Json\Test;
+namespace BHayes\Test;
 
 use BHayes\Json\Json;
 use PHPUnit\Framework\TestCase;
