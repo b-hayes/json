@@ -27,9 +27,4 @@ class JsonFileTest extends TestCase
         $jsonFile = new JsonFile($this->testFile);
         self::assertTrue('some value' === $jsonFile->saveThis);
     }
-
-    public function tearDown(): void
-    {
-//        unlink($this->testFile);
-    }
 }
