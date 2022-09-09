@@ -8,6 +8,8 @@ class ComposerJson extends JsonFile
 {
     public function __construct(string $filename = 'composer.json')
     {
+        //so that errors show the full path
+        if ($filename === 'composer.json') $filename = getcwd() . DIRECTORY_SEPARATOR . $filename;
         parent::__construct($filename);
     }
 

@@ -4,6 +4,8 @@
 namespace BHayes\Json;
 
 
+use function PHPUnit\Framework\isFinite;
+
 class JsonFile
 {
     private string $__fileName;
@@ -16,13 +18,12 @@ class JsonFile
      */
     public function __construct(string $filename)
     {
-        if (is_file($filename)) {
-            $jsonString = file_get_contents($filename);
-            if ($jsonString === false) {
-                throw new \Exception("$filename could not be loaded.");
-            }
-            Json::loadJsonString($jsonString, $this);
-        }
+        if (!is_file($filename)) throw new \Exception("$filename is not a file.");
+
+        $jsonString = file_get_contents($filename);
+        if ($jsonString === false) throw new \Exception("$filename could not be loaded.");
+
+        Json::loadJsonString($jsonString, $this);
 
         $this->__fileName = $filename;
     }
